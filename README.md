@@ -112,3 +112,27 @@ The JavaScript architecture is designed to be easily transitioned if you ever ou
    - A `CNAME` record pointing `www.eqqn.org` to `YOUR-USERNAME.github.io`.
    - `A` records pointing `eqqn.org` to GitHub's IP addresses (as specified in their official documentation).
 4. GitHub will automatically provision a free SSL certificate for HTTPS.
+
+## 11. Search Engine Optimization (SEO) & Google Indexing
+
+If you just published your website on GitHub Pages and it is not showing up on Google, **this is normal**. Google does not automatically know that your new website exists. It can take anywhere from a few days to a few weeks for Google to organically find and index your site.
+
+To speed up this process, I have added two files to your project:
+1. `robots.txt`: Tells Googlebot it is allowed to crawl the site.
+2. `sitemap.xml`: Provides a map of all your pages so Google can find them easily.
+
+### Action Required: Submit your site to Google
+
+To get on Google faster, you must manually tell them about your site:
+
+1. **Update the URLs:** Before pushing your code, open `robots.txt` and `sitemap.xml`. Replace `YOUR-USERNAME` with your actual GitHub username, or replace the entire URL with your custom domain (e.g., `https://eqqn.org/sitemap.xml`) if you are using one. Commit and push these changes.
+2. **Go to Google Search Console:** Visit [Google Search Console](https://search.google.com/search-console).
+3. **Add Property:** Log in with a Google account, click "Add Property", and select "URL prefix". Enter your exact GitHub Pages URL (e.g., `https://YOUR-USERNAME.github.io/eqqn/`) or your custom domain.
+4. **Verify Ownership:** Google will give you a few options to verify you own the site. If you are using GitHub Pages, the easiest method is the **HTML Tag** method.
+   - Copy the meta tag they provide.
+   - Paste it into the `<head>` section of your `index.html` file.
+   - Commit and push to GitHub.
+   - Wait a minute for the site to update, then click "Verify" in Search Console.
+5. **Submit Sitemap:** Once verified, click on **Sitemaps** in the left menu of Search Console. Type `sitemap.xml` into the box and click Submit.
+
+Google will now queue your site to be crawled and indexed. Be patient; it still takes time for them to process it!
