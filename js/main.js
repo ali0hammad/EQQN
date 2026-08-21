@@ -62,78 +62,31 @@ async function initGlobalData() {
 
 async function loadHomepageStats() {
     // In a real app, this would be a single API call to a /stats endpoint
-    const researchers = await fetchData('data/researchers.json') || [];
-    const research = await fetchData('data/research.json') || [];
-    const publications = await fetchData('data/publications.json') || [];
+    const activePredictions = await fetchData('data/active_predictions.json') || [];
+    const pastPredictions = await fetchData('data/past_predictions.json') || [];
+    const earthquakes = await fetchData('data/earthquakes.json') || [];
     const news = await fetchData('data/news.json') || [];
 
     const statsContainer = document.getElementById('stats-container');
     if (!statsContainer) return;
 
     statsContainer.innerHTML = `
-        <div class="stat-box"><span class="stat-number">${researchers.length}</span><span class="stat-label">Researchers</span></div>
-        <div class="stat-box"><span class="stat-number">${publications.length}</span><span class="stat-label">Published Papers</span></div>
-        <div class="stat-box"><span class="stat-number">${research.length}</span><span class="stat-label">Research Projects</span></div>
-        <div class="stat-box"><span class="stat-number">${news.length}</span><span class="stat-label">Earthquake Reports</span></div>
+        <div class="stat-box"><span class="stat-number">${activePredictions.length}</span><span class="stat-label">Active Predictions</span></div>
+        <div class="stat-box"><span class="stat-number">${pastPredictions.length}</span><span class="stat-label">Past Predictions</span></div>
+        <div class="stat-box"><span class="stat-number">${earthquakes.length}</span><span class="stat-label">Historical Earthquakes</span></div>
+        <div class="stat-box"><span class="stat-number">${news.length}</span><span class="stat-label">News Reports</span></div>
     `;
 
-    // Also trigger loading featured content if on homepage
-    if(document.getElementById('featured-research-container')) {
-        renderFeaturedResearch(research);
-    }
-    if(document.getElementById('featured-researchers-container')) {
-        renderFeaturedResearchers(researchers);
-    }
     if(document.getElementById('latest-news-container')) {
         renderLatestNews(news);
     }
-}
-
-function renderFeaturedResearch(researchData) {
-    const container = document.getElementById('featured-research-container');
-    if(!container) return;
-
-    const featured = researchData.filter(r => r.featured).slice(0, 3);
-
-    if(featured.length === 0) {
-        container.innerHTML = '<p>No featured research at this time.</p>';
-        return;
-    }
-
-    container.innerHTML = featured.map(r => `
-        <div class="card">
-            <span class="tag">${r.category}</span>
-            <h4 class="card-title">${r.title}</h4>
-            <div class="card-meta">By ${r.authors.join(', ')} | ${r.publicationDate}</div>
-            <p class="card-desc">${r.abstract}</p>
-            <a href="research.html" class="btn btn-secondary text-center mt-3">View Details</a>
-        </div>
-    `).join('');
-}
-
-function renderFeaturedResearchers(researchersData) {
-    const container = document.getElementById('featured-researchers-container');
-    if(!container) return;
-
-    const featured = researchersData.slice(0, 3); // Just grab first 3 for demo
-
-    container.innerHTML = featured.map(r => `
-        <div class="card text-center">
-            <h4 class="card-title">${r.name}</h4>
-            <div class="card-meta">${r.title} | ${r.institution}</div>
-            <p class="card-desc text-sm">${r.bio}</p>
-            <div class="mt-3">
-                ${r.specialization.slice(0,2).map(s => `<span class="tag">${s}</span>`).join('')}
-            </div>
-        </div>
-    `).join('');
 }
 
 function renderLatestNews(newsData) {
     const container = document.getElementById('latest-news-container');
     if(!container) return;
 
-    const latest = newsData.slice(0, 2);
+    const latest = newsData.slice(0, 3);
 
     container.innerHTML = latest.map(n => `
         <div class="card">

@@ -81,9 +81,10 @@ function loadView(viewName) {
     const titles = {
         'admin-overview': 'Platform Overview',
         'researcher-overview': 'My Workspace',
-        'submit-new': 'Submit New Research',
-        'manage-researchers': 'Manage Researchers',
-        'pending-reviews': 'Pending Reviews'
+        'submit-new': 'Submit Prediction',
+        'manage-predictions': 'Active Predictions',
+        'manage-past-predictions': 'Past Predictions',
+        'pending-reviews': 'Pending Predictions'
     };
 
     viewTitle.textContent = titles[viewName] || viewName.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase());
@@ -110,32 +111,32 @@ function renderAdminOverview(container) {
     container.innerHTML = `
         <div class="dashboard-stats">
             <div class="stat-card">
-                <h3>Total Researchers</h3>
-                <div class="value">24</div>
+                <h3>Active Predictions</h3>
+                <div class="value">2</div>
             </div>
             <div class="stat-card">
-                <h3>Published Papers</h3>
-                <div class="value">142</div>
+                <h3>Past Predictions</h3>
+                <div class="value">2</div>
             </div>
             <div class="stat-card">
                 <h3>Pending Reviews</h3>
-                <div class="value text-warning">3</div>
+                <div class="value text-warning">2</div>
             </div>
             <div class="stat-card">
-                <h3>Recent Reports</h3>
-                <div class="value">12</div>
+                <h3>Recent News</h3>
+                <div class="value">5</div>
             </div>
         </div>
 
         <div class="table-container">
             <div class="table-header">
-                <h3>Pending Submissions</h3>
+                <h3>Pending Predictions</h3>
                 <button class="btn btn-primary text-sm">View All</button>
             </div>
             <table>
                 <thead>
                     <tr>
-                        <th>Title</th>
+                        <th>Region</th>
                         <th>Author</th>
                         <th>Date Submitted</th>
                         <th>Status</th>
@@ -144,14 +145,14 @@ function renderAdminOverview(container) {
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Analysis of fault line data...</td>
+                        <td>Pacific Ring of Fire Sector 9</td>
                         <td>Dr. Sarah Jenkins</td>
                         <td>2024-03-01</td>
                         <td><span class="status pending">Pending</span></td>
                         <td><button class="btn btn-secondary text-sm">Review</button></td>
                     </tr>
                     <tr>
-                        <td>Updated prediction methodology</td>
+                        <td>Mediterranean Fault Zone</td>
                         <td>Prof. Elena Rossi</td>
                         <td>2024-02-28</td>
                         <td><span class="status pending">Pending</span></td>
@@ -172,12 +173,12 @@ function renderResearcherOverview(container) {
 
         <div class="dashboard-stats">
             <div class="stat-card">
-                <h3>My Publications</h3>
-                <div class="value">12</div>
+                <h3>Active Predictions</h3>
+                <div class="value">1</div>
             </div>
             <div class="stat-card">
                 <h3>Drafts</h3>
-                <div class="value">2</div>
+                <div class="value">1</div>
             </div>
             <div class="stat-card">
                 <h3>In Review</h3>
@@ -193,28 +194,28 @@ function renderResearcherOverview(container) {
             <table>
                 <thead>
                     <tr>
-                        <th>Title</th>
-                        <th>Type</th>
+                        <th>Region</th>
+                        <th>Timeframe</th>
                         <th>Date</th>
                         <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Analysis of fault line data...</td>
-                        <td>Research Paper</td>
+                        <td>Pacific Ring of Fire Sector 9</td>
+                        <td>Next 14 Days</td>
                         <td>2024-03-01</td>
                         <td><span class="status pending">In Review</span></td>
                     </tr>
                     <tr>
-                        <td>Draft: Sensor network optimization</td>
-                        <td>Dataset</td>
+                        <td>Draft: Fault zone Alpha</td>
+                        <td>Next 30 Days</td>
                         <td>2024-02-15</td>
                         <td><span class="status draft">Draft</span></td>
                     </tr>
                     <tr>
-                        <td>Enhancing Seismic Early Warning...</td>
-                        <td>Journal Article</td>
+                        <td>Mediterranean Fault Zone</td>
+                        <td>Next 14 Days</td>
                         <td>2023-10-15</td>
                         <td><span class="status published">Published</span></td>
                     </tr>
@@ -227,30 +228,30 @@ function renderResearcherOverview(container) {
 function renderSubmitForm(container) {
     container.innerHTML = `
         <div class="card">
-            <h3 class="mb-3">Submit New Research</h3>
+            <h3 class="mb-3">Submit New Prediction</h3>
             <div class="disclaimer-box warning-box mb-3 text-sm">
                 This is a UI demo. Form submissions are disabled in this static version.
             </div>
             <form class="standard-form" onsubmit="event.preventDefault(); alert('Submission workflow demo completed.'); loadView('researcher-overview');">
                 <div class="form-group">
-                    <label>Title</label>
+                    <label>Target Region</label>
                     <input type="text" required>
                 </div>
                 <div class="form-group">
-                    <label>Category</label>
-                    <select required>
-                        <option>Seismology</option>
-                        <option>Earthquake Engineering</option>
-                        <option>Early Warning Systems</option>
-                    </select>
+                    <label>Predicted Magnitude</label>
+                    <input type="text" required>
                 </div>
                 <div class="form-group">
-                    <label>Abstract</label>
+                    <label>Timeframe</label>
+                    <input type="text" required>
+                </div>
+                <div class="form-group">
+                    <label>Hypothesis</label>
+                    <textarea rows="2" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Methodology</label>
                     <textarea rows="4" required></textarea>
-                </div>
-                <div class="form-group">
-                    <label>Upload PDF (Demo)</label>
-                    <input type="file" disabled>
                 </div>
                 <div style="display:flex; gap:1rem;">
                     <button type="button" class="btn btn-secondary" onclick="loadView('researcher-overview')">Save Draft</button>

@@ -1,0 +1,24 @@
+[
+  {
+    "id": "act-pred-001",
+    "researcherId": "admin",
+    "hypothesis": "Elevated Seismic Stress Transfer",
+    "predictionDate": "2024-03-15",
+    "targetRegion": "Pacific Ring of Fire Sector 7",
+    "targetTimeframe": "Next 30 Days",
+    "predictedMagnitude": "6.0 - 6.5",
+    "methodology": "Analysis of recent deep-focus events suggesting stress transfer to shallow crustal faults.",
+    "status": "Active Monitoring"
+  },
+  {
+    "id": "act-pred-002",
+    "researcherId": "researcher-01",
+    "hypothesis": "Anomalous Low-Frequency Tremors",
+    "predictionDate": "2024-03-18",
+    "targetRegion": "Mediterranean Fault Zone",
+    "targetTimeframe": "Next 14 Days",
+    "predictedMagnitude": "5.0 - 5.8",
+    "methodology": "Machine learning detection of unusual low-frequency tremor swarms correlating with historical pre-shock data.",
+    "status": "Active Monitoring"
+  }
+]

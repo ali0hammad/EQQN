@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Publications | EQQN Research Center</title>
-    <meta name="description" content="Browse scholarly articles, conference papers, and datasets published through the EQQN Research Center.">
+    <title>Past Predictions | EQQN Research Center</title>
+    <meta name="description" content="Archive of past earthquake predictions and their outcomes at the EQQN Research Center.">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
 </head>
@@ -17,14 +17,12 @@
             <nav id="main-nav">
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="research.html">Research</a></li>
-                    <li><a href="publications.html" class="active">Publications</a></li>
-                    <li><a href="researchers.html">Researchers</a></li>
                     <li><a href="news.html">Earthquake News</a></li>
-                    <li><a href="predictions.html">Predictions</a></li>
+                    <li><a href="predictions.html">Active Predictions</a></li>
+                    <li><a href="past-predictions.html" class="active">Past Predictions</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
-                    <li><a href="login.html" class="btn-login" id="nav-login-btn">Researcher Login</a></li>
+                    <li><a href="login.html" class="btn-login" id="nav-login-btn">Admin Login</a></li>
                 </ul>
                 <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle Menu">&#9776;</button>
             </nav>
@@ -34,27 +32,19 @@
     <main class="page-content bg-light">
         <section class="page-header">
             <div class="container">
-                <h1>Publications</h1>
-                <p>Journal articles, conference papers, and reports from our community.</p>
+                <h1>Past Predictions Archive</h1>
+                <p>Retrospective study of historical earthquake predictions, methodologies, and their actual outcomes.</p>
+                <div class="disclaimer-box mt-3" style="background-color: var(--light-color); padding: 15px; border-left: 4px solid var(--primary-color);">
+                    <p><strong>Note:</strong> Evaluating past predictions is essential for refining future models and improving seismic hazard assessments.</p>
+                </div>
             </div>
         </section>
 
         <section class="directory-section">
             <div class="container">
-                <div class="filter-controls">
-                    <input type="text" id="search-publications" placeholder="Search by title, author, or keyword...">
-                    <select id="filter-pub-type">
-                        <option value="all">All Types</option>
-                        <option value="Journal Article">Journal Article</option>
-                        <option value="Conference Paper">Conference Paper</option>
-                        <option value="Technical Report">Technical Report</option>
-                        <option value="Dataset">Dataset</option>
-                    </select>
-                </div>
-
-                <div class="list-container" id="publications-container">
+                <div class="grid-container" id="past-predictions-container">
                     <!-- Injected via JS -->
-                    <p class="loading-text">Loading publications...</p>
+                    <p class="loading-text">Loading historical data...</p>
                 </div>
             </div>
         </section>
@@ -71,13 +61,13 @@
                     <h4>Links</h4>
                     <ul>
                         <li><a href="about.html">About Us</a></li>
-                        <li><a href="research.html">Research</a></li>
+                        <li><a href="predictions.html">Active Predictions</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4>Legal & Disclaimer</h4>
-                    <p>This is a research platform. For official earthquake warnings, please consult your local government authorities.</p>
+                    <p>This is a scientific platform. For official immediate earthquake warnings, please consult your local government authorities.</p>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -88,6 +78,6 @@
 
     <script src="js/main.js"></script>
     <script src="js/auth.js"></script>
-    <script src="js/publications.js"></script>
+    <script src="js/past-predictions.js"></script>
 </body>
 </html>

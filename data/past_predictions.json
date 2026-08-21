@@ -1,26 +1,26 @@
 [
   {
-    "id": "pred-001",
-    "researcherId": "researcher-003",
+    "id": "past-pred-001",
+    "researcherId": "admin",
     "hypothesis": "Machine Learning Pattern Recognition in Radon Gas Emissions",
     "predictionDate": "2018-05-10",
     "targetRegion": "[Placeholder Region Alpha]",
     "targetTimeframe": "2018-06 to 2018-12",
     "predictedMagnitude": "5.5+",
     "methodology": "Sample Data: This historical prediction utilized early CNNs to analyze radon gas fluctuations. The methodology is preserved here for retrospective study.",
-    "outcome": "No significant event occurred within the predicted timeframe. The methodology was later revised in paper pub-002.",
-    "status": "Archived - For Study"
+    "outcome": "No significant event occurred within the predicted timeframe.",
+    "status": "Archived - Failed"
   },
   {
-    "id": "pred-002",
-    "researcherId": "researcher-001",
+    "id": "past-pred-002",
+    "researcherId": "researcher-02",
     "hypothesis": "Foreshock Sequence Analysis via Statistical Modeling",
     "predictionDate": "2020-11-01",
     "targetRegion": "[Placeholder Region Beta]",
     "targetTimeframe": "72 Hours",
     "predictedMagnitude": "6.0+",
     "methodology": "Sample Data: Analysis of clustering foreshocks using Epidemic-Type Aftershock Sequence (ETAS) modeling.",
-    "outcome": "A M6.1 event occurred 48 hours later. However, statistical significance remains debated. See related research.",
-    "status": "Archived - For Study"
+    "outcome": "A M6.1 event occurred 48 hours later. However, statistical significance remains debated.",
+    "status": "Archived - Successful"
   }
 ]
