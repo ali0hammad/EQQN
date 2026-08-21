@@ -18,29 +18,9 @@ function initNavigation() {
             navMenu.classList.toggle('show');
         });
     }
-
-    // Update Nav UI based on auth state
-    updateNavAuthState();
 }
 
-// Global Auth State UI Update
-function updateNavAuthState() {
-    const loginBtn = document.getElementById('nav-login-btn');
-    if (!loginBtn) return;
-
-    const currentUser = JSON.parse(sessionStorage.getItem('eqqn_user'));
-
-    if (currentUser) {
-        loginBtn.textContent = 'Admin Dashboard';
-        if(currentUser.role === 'researcher') {
-            loginBtn.textContent = 'My Dashboard';
-        }
-        loginBtn.href = 'dashboard.html';
-        loginBtn.classList.add('logged-in');
-    }
-}
-
-// Fetch helper (ready for future backend)
+// Fetch helper
 async function fetchData(endpoint) {
     try {
         const response = await fetch(endpoint);
@@ -61,7 +41,6 @@ async function initGlobalData() {
 }
 
 async function loadHomepageStats() {
-    // In a real app, this would be a single API call to a /stats endpoint
     const activePredictions = await fetchData('data/active_predictions.json') || [];
     const pastPredictions = await fetchData('data/past_predictions.json') || [];
     const earthquakes = await fetchData('data/earthquakes.json') || [];

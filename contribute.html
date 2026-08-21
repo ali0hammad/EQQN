@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contribute | EQQN Research Center</title>
+    <meta name="description" content="Learn how to contribute research, predictions, and news to the EQQN platform via GitHub.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><strong>EQQN</strong></a>
+            </div>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="news.html">Earthquake News</a></li>
+                    <li><a href="predictions.html">Active Predictions</a></li>
+                    <li><a href="past-predictions.html">Past Predictions</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="contribute.html" class="btn-login active" id="nav-login-btn">Contribute</a></li>
+                </ul>
+                <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle Menu">&#9776;</button>
+            </nav>
+        </div>
+    </header>
+    <main class="page-content bg-light">
+        <section class="page-header">
+            <div class="container">
+                <h1>Contribute to EQQN</h1>
+                <p>Learn how to submit new predictions, update past data, and publish earthquake news.</p>
+            </div>
+        </section>
+        <section class="container" style="padding: 40px 0;">
+            <div class="card" style="max-width: 800px; margin: 0 auto; padding: 30px;">
+                <h3 style="color: var(--primary-color); margin-bottom: 20px;">The GitHub Pull Request Workflow</h3>
+                <p style="margin-bottom: 20px;">
+                    To ensure absolute transparency and maintain scientific credibility, the EQQN Research Center manages all active predictions, past predictions, and news reports through a secure <strong>Git-based workflow</strong>.
+                </p>
+                <p style="margin-bottom: 20px;">
+                    We do not use a traditional username/password portal. Instead, all data is stored securely in structured JSON files on our private GitHub repository.
+                </p>
+                <h4 style="margin-top: 30px; margin-bottom: 15px;">How to Submit a Prediction</h4>
+                <ol style="line-height: 1.8; margin-left: 20px; margin-bottom: 30px;">
+                    <li>Log in to your authorized <strong>GitHub</strong> account.</li>
+                    <li>Navigate to the private EQQN repository.</li>
+                    <li>Locate the relevant data file (e.g., <code>data/active_predictions.json</code>).</li>
+                    <li>Edit the file to include your new entry using the standard JSON format.</li>
+                    <li>Commit your changes and open a <strong>Pull Request</strong>.</li>
+                    <li>The Platform Administrator will review the Pull Request for scientific integrity and formatting. Once approved and merged, the live website will automatically update!</li>
+                </ol>
+                <div class="disclaimer-box warning-box" style="margin-top: 30px;">
+                    <p><strong>Note for Contributors:</strong> You must be granted explicit access to the EQQN private repository by the Administrator before you can submit Pull Requests. If you are a new researcher, please use the <a href="contact.html" style="color: var(--primary-color); font-weight: bold;">Contact</a> page to request access.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>EQQN Research Center</h4>
+                    <p>Advancing earthquake science and scientific communication.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="predictions.html">Active Predictions</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal & Disclaimer</h4>
+                    <p>This is a scientific platform. For official immediate earthquake warnings, please consult your local government authorities.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 EQQN - Earthquake Quick News Research Center. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>

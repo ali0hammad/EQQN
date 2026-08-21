@@ -1,6 +1,6 @@
 # EQQN — Earthquake Quick News Research Center
 
-A professional, modern research-center website designed to be hosted completely free using GitHub Pages.
+A professional, modern research-center website designed to be hosted securely and completely free using GitHub Pages.
 
 ## 1. Project Structure
 
@@ -8,41 +8,31 @@ The project is structured entirely using static web technologies to ensure compa
 
 ```
 EQQN/
-├── index.html           # Homepage
+├── index.html           # Homepage highlighting predictions
 ├── about.html           # About organization
-├── research.html        # Directory of research projects
-├── publications.html    # Directory of publications/datasets
-├── researchers.html     # Researcher directory
 ├── news.html            # Earthquake news and analysis
-├── predictions.html     # Historical predictions archive
-├── contact.html         # Contact/Application form (UI only)
-├── login.html           # Demo login page
-├── dashboard.html       # Role-based dashboard UI
+├── predictions.html     # Active predictions
+├── past-predictions.html# Historical predictions archive
+├── contact.html         # Contact page (UI only)
+├── contribute.html      # Instructions for GitHub-based workflow
 │
 ├── css/                 # Vanilla CSS
 │   ├── style.css        # Main stylesheet
-│   ├── responsive.css   # Media queries
-│   └── dashboard.css    # Dashboard specific styles
+│   └── responsive.css   # Media queries
 │
 ├── js/                  # Vanilla JavaScript
 │   ├── main.js          # Shared logic & data fetching
-│   ├── auth.js          # Demo authentication logic
-│   ├── dashboard.js     # Dashboard UI switching
-│   ├── research.js      # Research page logic
-│   ├── researchers.js   # Researchers page logic
-│   ├── publications.js  # Publications page logic
 │   ├── news.js          # News page logic
-│   └── predictions.js   # Predictions page logic
+│   ├── predictions.js   # Active predictions page logic
+│   └── past-predictions.js # Past predictions page logic
 │
-├── data/                # Mock JSON data (Pre-Backend)
-│   ├── researchers.json
-│   ├── research.json
-│   ├── publications.json
+├── data/                # JSON data (The Database)
 │   ├── news.json
 │   ├── earthquakes.json
-│   └── predictions.json
+│   ├── active_predictions.json
+│   └── past_predictions.json
 │
-└── assets/              # Images, icons, and logos (empty folders initialized)
+└── assets/              # Images, icons, and logos
 ```
 
 ## 2. How to run the website locally
@@ -59,19 +49,14 @@ Alternatively, if you use VS Code, you can install the "Live Server" extension a
 
 ## 3. How to upload it to GitHub
 
-1. Create a new repository on GitHub (e.g., named `eqqn-research`).
+1. Create a new repository on GitHub.
 2. Initialize git in this project directory:
    ```bash
    git init
    git add .
    git commit -m "Initial commit for EQQN"
    ```
-3. Link to your GitHub repository and push:
-   ```bash
-   git branch -M main
-   git remote add origin https://github.com/YOUR-USERNAME/eqqn-research.git
-   git push -u origin main
-   ```
+3. Link to your GitHub repository and upload your code.
 
 ## 4. How to enable GitHub Pages
 
@@ -81,44 +66,42 @@ Alternatively, if you use VS Code, you can install the "Live Server" extension a
 4. Under "Build and deployment", select **Deploy from a branch**.
 5. Choose the `main` branch and the `/ (root)` folder.
 6. Click **Save**.
-7. In a few minutes, your site will be live at `https://YOUR-USERNAME.github.io/eqqn-research/`.
+7. In a few minutes, your site will be live at `https://YOUR-USERNAME.github.io/eqqn/`.
 
 ## 5. How researchers should contribute
 
-In this current static version, researchers should primarily contribute by providing data formatted for the JSON files located in the `data/` directory.
+In this static architecture, the **GitHub Pull Request workflow** acts as the backend and Content Management System.
 
-- Add a new researcher by appending an object to `data/researchers.json`.
-- Add a new paper to `data/research.json`.
-- Researchers **do not** need to edit the HTML, CSS, or JS files to publish content. The JavaScript automatically renders the interface based on the JSON files.
+Researchers do not edit the HTML directly. Instead, they edit the JSON files located in the `data/` directory via GitHub:
+- To add a new active prediction, append an object to `data/active_predictions.json`.
+- Edit the file, commit the change, and open a Pull Request.
 
-## 6. Difference between Admin and Researcher
+Once the Administrator merges the Pull Request, GitHub Pages will automatically rebuild and the live website will instantly reflect the new data.
 
-The portal uses two distinct roles (demonstrated via `login.html` and `dashboard.html`):
+## 6. Difference between Admin and Contributor
 
-- **Admin (Platform Host):** Has full control. The dashboard conceptualizes features to manage researchers, approve research papers, manage news, and review pending submissions.
-- **Researcher (Contributor):** Has limited scope. Can manage their own profile, submit new research drafts, and view the status of their submissions.
+The platform uses a secure Git-based roles system instead of vulnerable web passwords:
 
-*Note: In this static version, the dashboard is a UI demonstration. To test the views, log in using the username `admin` or `researcher` (any password works).*
+- **Admin (Platform Host):** Has "Admin" or "Maintainer" privileges on the GitHub repository. They review Pull Requests for scientific integrity, approve them, and merge them into the `main` branch.
+- **Researcher (Contributor):** Has "Read" or "Write" access (or acts via forks). They can submit new data (JSON) via Pull Requests but cannot publish directly to the live site.
 
 ## 7. Current limitations of static hosting
 
 GitHub Pages is a static hosting provider. This means:
-- There is no server-side database (e.g., SQL/NoSQL). Data is read from static `.json` files.
-- Forms (like Contact or "Submit Research") cannot securely process data.
-- The authentication system (`auth.js`) is purely a frontend demonstration using `sessionStorage`. **It is not secure** and should not be used for real passwords.
+- Forms (like Contact) cannot securely process data on their own.
+- If the repository is made Private, you must have a paid GitHub plan (Pro/Team) to keep the GitHub Pages live. If you are on the free tier, making the repo private will unpublish the site.
 
-## 8. What needs to be added for real authentication
+## 8. Security Note on JSON files
 
-To make the login secure, you will need a backend server. This involves:
-- A database to store user credentials securely (using password hashing like bcrypt).
-- An authentication service (e.g., JWT, OAuth, or sessions managed by Node.js/Python).
-- Protected API endpoints that verify the user's token before returning sensitive data or accepting submissions.
+Even if your repository is private (using a paid GitHub plan), remember that the `.json` files inside the `data/` folder are downloaded to the visitor's browser so the website can render them.
+
+**Never put real passwords, API keys, or sensitive user personal data into the JSON files or Javascript.**
 
 ## 9. How the project can later be connected to a database/backend
 
-The JavaScript architecture is designed to be easily transitioned:
-- In `js/main.js`, all data is fetched using a centralized `fetchData()` function pointing to relative paths like `data/research.json`.
-- Once a backend is built, you simply change the endpoint URLs from `data/research.json` to your new API routes, e.g., `https://api.eqqn.org/v1/research`.
+The JavaScript architecture is designed to be easily transitioned if you ever outgrow the Git-based workflow:
+- In `js/main.js`, data is fetched using a centralized `fetchData()` function pointing to relative paths like `data/active_predictions.json`.
+- Once a backend is built, you simply change the endpoint URLs to your new API routes, e.g., `https://api.eqqn.org/v1/predictions/active`.
 - The frontend UI rendering functions will continue to work exactly as they do now, provided the API returns the same JSON structure.
 
 ## 10. How to connect a custom domain such as `eqqn.org`
