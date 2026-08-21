@@ -1,0 +1,41 @@
+[
+  {
+    "id": "researcher-001",
+    "name": "Dr. Sarah Jenkins",
+    "title": "Lead Researcher",
+    "degree": "PhD Geophysics",
+    "institution": "[Placeholder University Institute]",
+    "specialization": ["Seismology", "Early Warning Systems"],
+    "bio": "Sample Data: Dr. Jenkins specializes in the development of rapid-response seismic networks.",
+    "orcid": "0000-0000-0000-0000",
+    "googleScholar": "#",
+    "researchGate": "#",
+    "email": "s.jenkins@placeholder.edu"
+  },
+  {
+    "id": "researcher-002",
+    "name": "Dr. Marcus Chen",
+    "title": "Senior Analyst",
+    "degree": "PhD Earthquake Engineering",
+    "institution": "[Placeholder Research Lab]",
+    "specialization": ["Structural Engineering", "Seismic Hazard Assessment"],
+    "bio": "Sample Data: Dr. Chen's research focuses on building resilience in high-risk seismic zones.",
+    "orcid": "0000-0000-0000-0000",
+    "googleScholar": "#",
+    "researchGate": "#",
+    "email": "m.chen@placeholder.org"
+  },
+  {
+    "id": "researcher-003",
+    "name": "Prof. Elena Rossi",
+    "title": "Principal Investigator",
+    "degree": "PhD Earth Sciences",
+    "institution": "[Placeholder Institute of Geology]",
+    "specialization": ["Geology", "Machine Learning for Seismology"],
+    "bio": "Sample Data: Prof. Rossi uses advanced ML techniques to analyze historical fault line data.",
+    "orcid": "0000-0000-0000-0000",
+    "googleScholar": "#",
+    "researchGate": "#",
+    "email": "e.rossi@placeholder.edu"
+  }
+]

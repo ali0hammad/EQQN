@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications | EQQN Research Center</title>
+    <meta name="description" content="Browse scholarly articles, conference papers, and datasets published through the EQQN Research Center.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><strong>EQQN</strong></a>
+            </div>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="research.html">Research</a></li>
+                    <li><a href="publications.html" class="active">Publications</a></li>
+                    <li><a href="researchers.html">Researchers</a></li>
+                    <li><a href="news.html">Earthquake News</a></li>
+                    <li><a href="predictions.html">Predictions</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="login.html" class="btn-login" id="nav-login-btn">Researcher Login</a></li>
+                </ul>
+                <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle Menu">&#9776;</button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page-content bg-light">
+        <section class="page-header">
+            <div class="container">
+                <h1>Publications</h1>
+                <p>Journal articles, conference papers, and reports from our community.</p>
+            </div>
+        </section>
+
+        <section class="directory-section">
+            <div class="container">
+                <div class="filter-controls">
+                    <input type="text" id="search-publications" placeholder="Search by title, author, or keyword...">
+                    <select id="filter-pub-type">
+                        <option value="all">All Types</option>
+                        <option value="Journal Article">Journal Article</option>
+                        <option value="Conference Paper">Conference Paper</option>
+                        <option value="Technical Report">Technical Report</option>
+                        <option value="Dataset">Dataset</option>
+                    </select>
+                </div>
+
+                <div class="list-container" id="publications-container">
+                    <!-- Injected via JS -->
+                    <p class="loading-text">Loading publications...</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>EQQN Research Center</h4>
+                    <p>Advancing earthquake science and scientific communication.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="research.html">Research</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal & Disclaimer</h4>
+                    <p>This is a research platform. For official earthquake warnings, please consult your local government authorities.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 EQQN - Earthquake Quick News Research Center. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/publications.js"></script>
+</body>
+</html>

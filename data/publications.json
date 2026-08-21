@@ -1,0 +1,28 @@
+[
+  {
+    "id": "pub-001",
+    "title": "Sample: Open Dataset of Historical Fault Displacements in the Mediterranean Region",
+    "authors": ["Prof. Elena Rossi", "Dr. Sarah Jenkins"],
+    "type": "Dataset",
+    "publicationDate": "2024-02-10",
+    "journal": "EQQN Data Repository",
+    "abstract": "Sample Data: A comprehensive dataset containing digitized records of fault displacements collected between 1950 and 2020.",
+    "doi": "10.0000/placeholder.data.001",
+    "keywords": ["Dataset", "Fault Displacement", "Mediterranean", "Historical Data"],
+    "pdf": "#",
+    "citation": "Rossi, E., & Jenkins, S. (2024). Open Dataset of Historical Fault Displacements. EQQN Data Repository."
+  },
+  {
+    "id": "pub-002",
+    "title": "Sample: Review of Current Methodologies in Seismic Hazard Assessment",
+    "authors": ["Dr. Marcus Chen"],
+    "type": "Journal Article",
+    "publicationDate": "2023-08-22",
+    "journal": "Journal of Placeholder Seismology",
+    "abstract": "Sample Data: This paper reviews the evolution of probabilistic seismic hazard assessment (PSHA) methodologies over the last decade.",
+    "doi": "10.0000/placeholder.journal.002",
+    "keywords": ["PSHA", "Hazard Assessment", "Review"],
+    "pdf": "#",
+    "citation": "Chen, M. (2023). Review of Current Methodologies in Seismic Hazard Assessment. Journal of Placeholder Seismology, 45(3), 112-130."
+  }
+]

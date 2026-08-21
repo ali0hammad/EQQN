@@ -1,0 +1,20 @@
+[
+  {
+    "id": "news-001",
+    "title": "Scientific Analysis of the M6.2 Event off the Coast of [Placeholder Region]",
+    "date": "2024-03-01",
+    "author": "EQQN Analysis Team",
+    "summary": "Sample Data: An initial scientific review of the tectonic mechanisms behind yesterday's M6.2 offshore event. Preliminary data suggests a strike-slip fault mechanism.",
+    "content": "Full content goes here. This is sample data indicating a research-based news report rather than an emergency warning.",
+    "relatedResearch": ["res-001"]
+  },
+  {
+    "id": "news-002",
+    "title": "New Research Grant Awarded for Early Warning Systems Integration",
+    "date": "2024-02-15",
+    "author": "EQQN Administration",
+    "summary": "Sample Data: EQQN researchers have received a grant to study the integration of low-cost MEMS sensors into existing municipal infrastructure.",
+    "content": "Full content goes here.",
+    "relatedResearch": []
+  }
+]

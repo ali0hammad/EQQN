@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | EQQN Research Center</title>
+    <meta name="description" content="Dashboard for EQQN Researchers and Administrators.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body class="dashboard-body">
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar" id="dashboard-sidebar">
+            <div class="sidebar-header">
+                <h2><a href="index.html">EQQN Portal</a></h2>
+                <button class="close-sidebar" id="close-sidebar">&times;</button>
+            </div>
+
+            <div class="sidebar-user-info">
+                <div class="user-avatar"></div>
+                <div class="user-details">
+                    <strong id="user-name-display">User</strong>
+                    <span class="user-role" id="user-role-display">Role</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <!-- Researcher Navigation -->
+                <ul id="nav-researcher" style="display: none;">
+                    <li class="nav-heading">My Workspace</li>
+                    <li><a href="#" class="active" data-view="researcher-overview">Overview</a></li>
+                    <li><a href="#" data-view="my-profile">My Profile</a></li>
+                    <li><a href="#" data-view="my-research">My Research</a></li>
+                    <li><a href="#" data-view="my-publications">Publications</a></li>
+                    <li><a href="#" data-view="my-predictions">My Predictions</a></li>
+                    <li><a href="#" data-view="submit-new">Submit New</a></li>
+                </ul>
+
+                <!-- Admin Navigation -->
+                <ul id="nav-admin" style="display: none;">
+                    <li class="nav-heading">Platform Administration</li>
+                    <li><a href="#" class="active" data-view="admin-overview">Dashboard</a></li>
+                    <li><a href="#" data-view="manage-researchers">Researchers</a></li>
+                    <li><a href="#" data-view="manage-research">Research Papers</a></li>
+                    <li><a href="#" data-view="manage-publications">Publications</a></li>
+                    <li><a href="#" data-view="manage-news">News & Reports</a></li>
+                    <li><a href="#" data-view="pending-reviews">Pending Reviews <span class="badge">3</span></a></li>
+                    <li><a href="#" data-view="system-settings">Settings</a></li>
+                </ul>
+
+                <ul class="nav-bottom">
+                    <li><a href="index.html">Return to Public Site</a></li>
+                    <li><a href="#" id="logout-btn">Log Out</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <div class="dashboard-main">
+            <header class="dashboard-header">
+                <button class="menu-toggle" id="menu-toggle">&#9776;</button>
+                <div class="header-title">
+                    <h1 id="view-title">Dashboard Overview</h1>
+                </div>
+                <div class="header-actions">
+                    <span class="status-indicator online" title="System Online"></span>
+                </div>
+            </header>
+
+            <main class="dashboard-content" id="dashboard-content">
+                <!-- Content will be injected here by dashboard.js based on role and selected view -->
+                <div class="loading-state">
+                    <p>Loading workspace...</p>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/auth.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

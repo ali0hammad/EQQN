@@ -1,0 +1,24 @@
+[
+  {
+    "id": "eq-001",
+    "date": "2024-02-28",
+    "time": "14:23:05 UTC",
+    "location": "[Placeholder Offshore Fault Region]",
+    "magnitude": 6.2,
+    "depth": "15 km",
+    "coordinates": "0.0000 N, 0.0000 E",
+    "source": "USGS / EMSC (Simulated Demo Data)",
+    "description": "Sample Data: A shallow strike-slip event located along the main plate boundary."
+  },
+  {
+    "id": "eq-002",
+    "date": "2024-02-25",
+    "time": "08:12:30 UTC",
+    "location": "[Placeholder Mountain Region]",
+    "magnitude": 4.5,
+    "depth": "35 km",
+    "coordinates": "0.0000 N, 0.0000 W",
+    "source": "Local Network (Simulated Demo Data)",
+    "description": "Sample Data: Deep intraplate event."
+  }
+]
